@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler
 
+import bot_secred_token
 import constants
 
 
@@ -48,7 +49,7 @@ def randomstory(bot, update):
 
 
 def main():
-    updater = Updater('870217868:AAGQ0xJ4eXJGqxks_XRf8CwSpLbXwWV7dfI')
+    updater = Updater(bot_secred_token.token)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('randomstory', randomstory))
     print("added handler")
