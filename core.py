@@ -22,6 +22,10 @@ while 1700 > randy > 1400:
 
 lines = open('phrases.txt').read().splitlines()
 randtext = random.choice(lines)
-writeinimage('pic1.png', randx, randy, randtext, size=randsize)
+
+randpicnumber = random.randint(1, constants.PICNUMBER)
+randpic = "images/pic (@).png"
+randpic = randpic.replace("@", randpicnumber.__str__())
+writeinimage(randpic, randx, randy, randtext, size=randsize)
 
 print(randx, randy)
